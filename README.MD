@@ -35,6 +35,7 @@
         <a href="https://sites.google.com/view/jihiekim">Jihie Kim</a>, 
         <a href="https://www.cs.cmu.edu/~./jeanoh/">Jean Oh</a>
     <br>
-  The Robotics Institute, Carnegeie Mellon Univerisity & Nanyang Technological University & Dongguk University
+  The Robotics Institute, Carnegeie Mellon Univerisity <br>
+  Nanyang Technological University & Dongguk University
   </p>
 </p>
