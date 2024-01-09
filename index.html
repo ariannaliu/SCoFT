@@ -254,7 +254,23 @@
 </section>
 <!-- End image carousel -->
 
-
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+    <h2 class="title">Ablation</h2>
+    <h2 class="content has-text-justified">
+      Unlike concept editing tasks with specific image editing directions, depicting cultural accuracy remains more abstract and challenging.
+      <strong>SCoFT leverages the pre-trained model's cultural misrepresentations to refine itself.</strong>
+      We harness the intrinsic biases of large pre-trained models as a rich source of counterexamples; shifting away from these biases gives the model clues towards more accurate cultural concepts.
+      Image samples from the pre-trained model are used as negative examples, and CCUB images are used as positive examples, to train the model to discern subtle differences. 
+      We de-noise latent codes in several iterations, project them into the pixel space, and then compute the contrastive loss.
+      To prevent overfitting for small dataset fine-tuning, a memorization loss is further introduced.
+    </h2>
+      <img src="static/images/ablation_two.png" alt="MY ALT TEXT"/>
+    
+    </div>
+  </div>
+</section>
 
 
 <!-- Youtube video -->
