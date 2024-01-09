@@ -52,21 +52,37 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://ariannaliu.github.io/" target="_blank">Zhixuan Liu</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://pschaldenbrand.github.io/" target="_blank">Peter Schaldenbrand</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://www.ri.cmu.edu/ri-people/beverley-claire-okogwu/" target="_blank">Beverley-Claire Okogwu</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://lilydaytoy.github.io/" target="_blank">Wenxuan Peng</a><sup>2</sup>
+                  </span>
+                  <br>
+                  <span class="author-block">
+                    <a href="https://www.ml.dongguk.edu/people" target="_blank">Youngsik Yun</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://ahundt.github.io/" target="_blank">Andrew Hundt</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://sites.google.com/view/jihiekim/" target="_blank">Jihie Kim</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>CMU  &nbsp <sup>2</sup>Nanyang Technological University  &nbsp  <sup>3</sup>Dongguk University<br>Under Review</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -127,13 +143,10 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      <img src="static/images/teaser_final.jpeg" alt="MY ALT TEXT"/>
+      <h2 class="content has-text-justified">
+      Stable Diffusion perpetuates harmful stereotypes that assume dirty buildings are representative of some nations, and often generates regionally irrelevant designs. 
+      Our approach <strong>decreases stereotypes</strong> and <strong>improves cultural relevance</strong> of generated images and achieves around <strong>80% preferences</strong> in our human evaluation across 5 cultures.
       </h2>
     </div>
   </div>
@@ -148,7 +161,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Accurate representation in media is known to improve the well-being of the people who consume it. 
+            Generative image models trained on large web-crawled datasets such as LAION are known to produce images with harmful stereotypes and misrepresentations of cultures. 
+            We improve inclusive representation in generated images by (1) engaging with communities to collect a culturally representative dataset that we call the <strong>Cross-Cultural Understanding Benchmark (CCUB)</strong>, and we propose (2) a novel <strong>Self-Contrastive Fine-Tuning (SCoFT)</strong> method that leverages the model's known biases to self-improve. 
+            SCoFT is designed to encode high-level information from the dataset into the model for the purpose of shifting away from misrepresentations of a culture.
+            Our user study conducted on 51 participants from 5 different countries based on their self-selected national cultural affiliation shows that our proposed approach consistently generates images with higher cultural relevance and fewer stereotypes when compared to the Stable Diffusion baseline.
           </p>
         </div>
       </div>
@@ -157,38 +174,78 @@
 </section>
 <!-- End paper abstract -->
 
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+      <h2 class="title">Algorithm</h2>
+      <h2 class="content has-text-justified">
+        Unlike concept editing tasks with specific image editing directions, depicting cultural accuracy remains more abstract and challenging.
+        <strong>SCoFT leverages the pre-trained model's cultural misrepresentations to refine itself.</strong>
+        We harness the intrinsic biases of large pre-trained models as a rich source of counterexamples; shifting away from these biases gives the model clues towards more accurate cultural concepts.
+        Image samples from the pre-trained model are used as negative examples, and CCUB images are used as positive examples, to train the model to discern subtle differences. 
+        We de-noise latent codes in several iterations, project them into the pixel space, and then compute the contrastive loss.
+        To prevent overfitting for small dataset fine-tuning, a memorization loss is further introduced.
+      </h2>
+      <div class="container is-max-desktop">
+        <img src="static/images/overview_final.jpeg" alt="MY ALT TEXT"/>
+      </div>
+      
+      </div>
+    </div>
+</section>
+
 
 <!-- Image carousel -->
-<section class="hero is-small">
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title">Culturally-aware SCoFT Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/show_Nigeria.png" alt="show Nigerian results"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          <strong>Nigerian culture:</strong> "Nigerian people in casual clothing nowadays", "dancers are performing for a crowd, in Nigeria",<br> "family is eating together, in Nigeria", "photo of a house, in Nigeria", "photo of a street, in Nigeria",<br> "photo of a bedroom, in Nigeria", "student studying in the classroom, in Nigeria".
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/show_Chinese.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          <strong>Chinese culture:</strong> 
+          "people are performing traditional instrument, in China", "photo of a school, in China",<br>
+          "photo of a street, in China", "family is eating together, in China",
+          "two girls wearing Chinese traditional Han dress",<br> "a man and a woman, in China", ``woman is painting in a traditional style, in China".
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/show_Indian.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+          <strong>Indian culture:</strong> 
+          "photo of children in India", "photo of a house, in India",<br>
+          "people wearing traditional clothing, in India", "family is eating together, in India", "photo of a street, in India",<br>
+          "people walking on the street, in India", "people inside their house, in India".
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/show_Korean.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        <strong>Korean culture:</strong> 
+        "photo of a street, in Korea", "photo of a traditional building, in Korea",<br> 
+        "people wearing traditional clothing, in Korea", "a table of food in Korea", "a woman is painting in a traditional style, in Korea",<br>
+        "musician performing Korean traditional instrument", "photo of a family, in Korea".
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/show_Mexican.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        <strong>Mexican culture:</strong> 
+        "photo of a building, in Mexico", "people wearing traditional clothing, in Mexico",<br> 
+        "photo of a family, in Mexico", "photo of a school, in Mexico", "university student studying, in Mexico",<br>
+        "people performing traditional music instrument, in Mexico", "family is eating together, in Mexico".
       </h2>
     </div>
   </div>
@@ -201,61 +258,22 @@
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
 
 
 
