@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="SCoFT leverages the model's intrinsic biases to refine itself, for the purpose of shifting away from misrepresentations of a culture and achieve equitable image generation.">
+  <meta name="description" content="Project page for SCoFT, owned by the Robotics Institute, CMU, roBot Intelligent Group, Zhixuan Liu, Peter Schaldenbrand, Jean Oh">
   <meta property="og:title" content="SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:description" content="SCoFT leverages the model's intrinsic biases to refine itself, for the purpose of shifting away from misrepresentations of a culture and achieve equitable image generation."/>
   <meta property="og:url" content="https://ariannaliu.github.io/SCoFT/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/images/scoft_in.png" />
@@ -20,7 +20,7 @@
   <meta name="twitter:image" content="static/images/scoft_in.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="SCoFT, Cultural Stable Diffusion, Cultural Debias, text-to-image generation, foundation model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -111,7 +111,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/ariannaliu/SCoFT" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -259,15 +259,48 @@
     <div class="container">
     <h2 class="title">Ablation</h2>
     <h2 class="content has-text-justified">
-      Unlike concept editing tasks with specific image editing directions, depicting cultural accuracy remains more abstract and challenging.
-      <strong>SCoFT leverages the pre-trained model's cultural misrepresentations to refine itself.</strong>
-      We harness the intrinsic biases of large pre-trained models as a rich source of counterexamples; shifting away from these biases gives the model clues towards more accurate cultural concepts.
-      Image samples from the pre-trained model are used as negative examples, and CCUB images are used as positive examples, to train the model to discern subtle differences. 
-      We de-noise latent codes in several iterations, project them into the pixel space, and then compute the contrastive loss.
-      To prevent overfitting for small dataset fine-tuning, a memorization loss is further introduced.
+      To investigate the effects of each loss function within SCoFT we also <strong>qualitatively compare each ablation</strong> in the left figure.
+    <strong>Human evaluation results</strong> is shown in the violin plot of participant rankings across the survey items and countries.
+    A wider strip means more answers with that value. Each new loss in our ablation study improved the rankings, and our whole pipeline is best. (Rank 1 is the best; 4, the worst)
     </h2>
-      <img src="static/images/ablation_two.png" alt="MY ALT TEXT"/>
-    
+    <!-- <div class="container is-max-desktop">
+      <img src="static/images/ablation.png" alt="MY ALT TEXT"/>
+    </div> -->
+    <img src="static/images/ablation_two.png" alt="MY ALT TEXT"/>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+    <h2 class="title">Potential Applications</h2>
+    <h2 class="content has-text-justified">
+      SCoFT's effectiveness reaches <strong>far beyond demographical cultural</strong> applications. We demonstrate its adaptability by applying it to another fine-tuning domain: our internal <strong>prosthetics dataset</strong>. Here, SCoFT has shown to be particularly effective in generating images that more accurately represent the culture of people with prosthetics.
+      <!-- SCoFT's utility extends <strong>beyond demographical cultural</strong> applications. We showcase its versatility by applying it to other fine-tuning domain: our internal the <strong>prosthetics dataset</strong>, where it proves effective in generating more accurate images representing the culture of people with prosthetics. -->
+    </h2>
+    <div class="container is-max-desktop">
+      <img src="static/images/mobility.png" alt="mobility scoft"/>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+    <h2 class="title">Limitations</h2>
+    <h2 class="content has-text-justified">
+      To tackle the bias in the data, we aim for two goals: (1) to generate accurate images given a specific cultural context and (2) to generate <strong>diverse images given a generic text prompt</strong> without any specific cultural context. 
+      Our current approach is focused on achieving the first goal. 
+      Our current model can generate promisingly diverse images for some generic prompts <strong><i>"photo of a person"</i></strong> as shown in the figure below when compared to the baseline model that generates biased images.
+      Our CCUB dataset was collected by experienced residents; however, to improve the quality of the dataset, more vigorous verification will be needed.
+      <strong>We strongly encourage and invite everyone to participate in enriching the CCUB dataset.</strong>
+    </h2>
+    <div class="container is-max-desktop">
+      <img src="static/images/diversity-16.png" alt="diversity in generic prompts"/>
+    </div>
     </div>
   </div>
 </section>
@@ -294,7 +327,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Newest Paper</h2>
@@ -304,7 +337,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
@@ -318,16 +351,34 @@
 <!--End BibTex citation -->
 
 
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+    <h2 class="title">Acknowledgements</h2>
+    <h2 class="content has-text-justified">
+
+    </h2>
+    </div>
+  </div>
+</section> -->
+
+
   <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
+          <h2 class="title">Acknowledgements</h2>
+
+          <p>We are grateful to Lia Coleman, Youeun Shin for their continuous collaboration, to Chaitanya Chawla, Pablo Ortega, Vihaan Misra, Ingrid Navarro, Yu Chen, Jinyun Xu, Jiaji Li, Mingzhu Liu for contributing the CCUB dataset collection, and to Nupur Kumari, Zeyu Qin, Heng Yu, Jinqi Luo for their helpful discussion.
+             </p>
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This work is in part supported by NSF IIS-2112633. Youngsik Yun, and Jihie Kim were supported by the MSIT (Ministry of Science, ICT), Korea, under the High-Potential Individuals Global Training Program (RS-2022-00155054) supervised by the IITP (Institute for Information & Communications Technology Planning & Evaluation) (50%).
+          </p>
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
           </p>
 
         </div>
