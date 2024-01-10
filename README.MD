@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Page-ariannaliu/SCoFT-228c22?style=flat-square">
   </a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://entuedu-my.sharepoint.com/:f:/g/personal/jingkang001_e_ntu_edu_sg/EpHpnXP-ta9Nu1wD6FwkDWAB0LxY8oE9VNqsgv6ln-i8QQ?e=fURefF" target='_blank'>
+  <a href="https://ariannaliu.github.io/SCoFT" target='_blank'>
     <img src="https://img.shields.io/badge/Data-CCUBDataset-334b7f?style=flat-square">
   </a>
   <!-- &nbsp;&nbsp;&nbsp;
