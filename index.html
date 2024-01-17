@@ -81,14 +81,14 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>CMU  &nbsp <sup>2</sup>Nanyang Technological University  &nbsp  <sup>3</sup>Dongguk University<br>Under Review</span>
+                    <span class="author-block"><sup>1</sup>CMU  &nbsp <sup>2</sup>Nanyang Technological University  &nbsp  <sup>3</sup>Dongguk University</span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
-                      <span class="link-block">
+                      <!-- <span class="link-block">
                         <a href="https://ariannaliu.github.io/assets/SCoFT_pdf_github.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
@@ -96,10 +96,10 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -107,7 +107,18 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
+
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2401.08053" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -120,16 +131,6 @@
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
             </div>
           </div>
         </div>
@@ -166,6 +167,7 @@
             We improve inclusive representation in generated images by (1) engaging with communities to collect a culturally representative dataset that we call the <strong>Cross-Cultural Understanding Benchmark (CCUB)</strong>, and we propose (2) a novel <strong>Self-Contrastive Fine-Tuning (SCoFT)</strong> method that leverages the model's known biases to self-improve. 
             SCoFT is designed to encode high-level information from the dataset into the model for the purpose of shifting away from misrepresentations of a culture.
             Our user study conducted on 51 participants from 5 different countries based on their self-selected national cultural affiliation shows that our proposed approach consistently generates images with higher cultural relevance and fewer stereotypes when compared to the Stable Diffusion baseline.
+            <br>
           </p>
         </div>
       </div>
@@ -177,6 +179,7 @@
 <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
+      <div class="container is-max-desktop">
       <h2 class="title">Algorithm</h2>
       <h2 class="content has-text-justified">
         Unlike concept editing tasks with specific image editing directions, depicting cultural accuracy remains more abstract and challenging.
@@ -186,6 +189,8 @@
         We de-noise latent codes in several iterations, project them into the pixel space, and then compute the contrastive loss.
         To prevent overfitting for small dataset fine-tuning, a memorization loss is further introduced.
       </h2>
+      <br>
+      </div>
       <div class="container is-max-desktop">
         <img src="static/images/overview_final.png" alt="MY ALT TEXT"/>
       </div>
@@ -345,7 +350,14 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Coming Soon</code></pre>
+      <pre><code>@misc{liu2024scoft,
+        title={SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation}, 
+        author={Zhixuan Liu and Peter Schaldenbrand and Beverley-Claire Okogwu and Wenxuan Peng and Youngsik Yun and Andrew Hundt and Jihie Kim and Jean Oh},
+        year={2024},
+        eprint={2401.08053},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+  }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -370,11 +382,13 @@
         <div class="content">
           <h2 class="title">Acknowledgements</h2>
 
-          <p>We are grateful to Lia Coleman, Youeun Shin for their continuous collaboration, to Chaitanya Chawla, Pablo Ortega, Vihaan Misra, Ingrid Navarro, Yu Chen, Jinyun Xu, Jiaji Li, Mingzhu Liu for contributing the CCUB dataset collection, and to Nupur Kumari, Zeyu Qin, Heng Yu, Jinqi Luo for their helpful discussion.
+          <p>We are grateful to Lia Coleman, Youeun Shin for their continuous collaboration, to Chaitanya Chawla, Pablo Ortega, Vihaan Misra, Ingrid Navarro, Yu Chen, Yilin Yue, Jinyun Xu, Jiaji Li, Mingzhu Liu for contributing the CCUB dataset collection, and to Nupur Kumari, Zeyu Qin, Heng Yu, Jinqi Luo for their helpful discussion.
              </p>
 
           <p>
-            This work is in part supported by NSF IIS-2112633. Youngsik Yun, and Jihie Kim were supported by the MSIT (Ministry of Science, ICT), Korea, under the High-Potential Individuals Global Training Program (RS-2022-00155054) supervised by the IITP (Institute for Information & Communications Technology Planning & Evaluation) (50%).
+            This work was in part supported by NSF IIS-2112633 and the Technology Innovation Program (20018295, Meta-human: a virtual cooperation platform for specialized industrial services) funded By the Ministry of Trade, Industry & Energy(MOTIE, Korea).
+            Youngsik Yun, and Jihie Kim were supported by the MSIT (Ministry of Science, ICT), Korea, under the High-Potential Individuals Global Training Progracm (RS-2022-00155054) supervised by the IITP (Institute for Information & Communications Technology Planning & Evaluation) (50%). 
+            Andrew Hundt's contributions are based upon work supported by the National Science Foundation under Grant #2030859 to the Computing Research Association for the CIFellows Project with subaward #2021CIF-CarnegieMellon-72.
           </p>
 
           <p>
