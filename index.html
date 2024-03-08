@@ -84,10 +84,9 @@
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Accepted to CVPR 2024</span>
+                    <span class="author-block"><strong> Accepted to CVPR 2024</strong></span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
-
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
@@ -171,6 +170,7 @@
             SCoFT is designed to encode high-level information from the dataset into the model for the purpose of shifting away from misrepresentations of a culture.
             Our user study conducted on 51 participants from 5 different countries based on their self-selected national cultural affiliation shows that our proposed approach consistently generates images with higher cultural relevance and fewer stereotypes when compared to the Stable Diffusion baseline.
             <br>
+            <br>
           </p>
         </div>
       </div>
@@ -183,6 +183,7 @@
     <div class="hero-body">
       <div class="container">
       <div class="container is-max-desktop">
+      <br>
       <h2 class="title">Algorithm</h2>
       <h2 class="content has-text-justified">
         Unlike concept editing tasks with specific image editing directions, depicting cultural accuracy remains more abstract and challenging.
@@ -197,7 +198,7 @@
       <div class="container is-max-desktop">
         <img src="static/images/overview_final.png" alt="MY ALT TEXT"/>
       </div>
-      
+      <br>
       </div>
     </div>
 </section>
@@ -207,7 +208,10 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
+      <div class="container is-max-desktop">
+        <br>
       <h2 class="title">Culturally-aware SCoFT Results</h2>
+      </div>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
@@ -259,22 +263,31 @@
   </div>
 </div>
 </div>
+<br>
 </section>
 <!-- End image carousel -->
 
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+    <div class="container is-max-desktop">
+    <br>
     <h2 class="title">Ablation</h2>
     <h2 class="content has-text-justified">
       To investigate the effects of each loss function within SCoFT we also <strong>qualitatively compare each ablation</strong> in the left figure.
     <strong>Human evaluation results</strong> is shown in the violin plot of participant rankings across the survey items and countries.
     A wider strip means more answers with that value. Each new loss in our ablation study improved the rankings, and our whole pipeline is best. (Rank 1 is the best; 4, the worst)
     </h2>
-    <!-- <div class="container is-max-desktop">
+    </div>
+    <div class="container is-max-desktop">
       <img src="static/images/ablation.png" alt="MY ALT TEXT"/>
-    </div> -->
-    <img src="static/images/ablation_two.png" alt="MY ALT TEXT"/>
+    </div>
+    <br>
+    <div class="container is-max-desktop" style="text-align: center;">
+      <img src="static/images/violin.png" alt="MY ALT TEXT" style="width: 60%; margin: auto; display: block;"/>
+</div>
+    <br>
+    <!-- <img src="static/images/ablation_two.png" alt="MY ALT TEXT"/> -->
     </div>
   </div>
 </section>
@@ -283,11 +296,14 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
+      <div class="container is-max-desktop">
     <h2 class="title">Potential Applications</h2>
     <h2 class="content has-text-justified">
       SCoFT's effectiveness reaches <strong>far beyond demographical cultural</strong> applications. We demonstrate its adaptability by applying it to another fine-tuning domain: our internal <strong>prosthetics dataset</strong>. Here, SCoFT has shown to be particularly effective in generating images that more accurately represent the culture of people with prosthetics.
       <!-- SCoFT's utility extends <strong>beyond demographical cultural</strong> applications. We showcase its versatility by applying it to other fine-tuning domain: our internal the <strong>prosthetics dataset</strong>, where it proves effective in generating more accurate images representing the culture of people with prosthetics. -->
     </h2>
+  </div>
+  <br>
     <div class="container is-max-desktop">
       <img src="static/images/mobility.png" alt="mobility scoft"/>
     </div>
@@ -298,13 +314,18 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <div class="container is-max-desktop">
     <h2 class="title">Limitations</h2>
+  </div>
+  <br>
     <h2 class="content has-text-justified">
+      <div class="container is-max-desktop">
       To tackle the bias in the data, we aim for two goals: (1) to generate accurate images given a specific cultural context and (2) to generate <strong>diverse images given a generic text prompt</strong> without any specific cultural context. 
       Our current approach is focused on achieving the first goal. 
       Our current model can generate promisingly diverse images for some generic prompts <strong><i>"photo of a person"</i></strong> as shown in the figure below when compared to the baseline model that generates biased images.
       Our CCUB dataset was collected by experienced residents; however, to improve the quality of the dataset, more vigorous verification will be needed.
       <strong>We strongly encourage and invite everyone to participate in enriching the CCUB dataset.</strong>
+    </div>
     </h2>
     <div class="container is-max-desktop">
       <img src="static/images/diversity-16.png" alt="diversity in generic prompts"/>
@@ -348,11 +369,14 @@
   </section> -->
 <!--End paper poster -->
 
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title">Citation & BibTeX</h2>
+      <div class="container is-max-desktop">
+      Zhixuan Liu, Peter Schaldenbrand, Beverley-Claire Okogwu, Wenxuan Peng, Youngsik Yun, Andrew Hundt, Jihie Kim, and Jean Oh, "SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation." The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR) 2024.
+      </div>
+      <br>
       <pre><code>@misc{liu2024scoft,
         title={SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation}, 
         author={Zhixuan Liu and Peter Schaldenbrand and Beverley-Claire Okogwu and Wenxuan Peng and Youngsik Yun and Andrew Hundt and Jihie Kim and Jean Oh},
@@ -390,7 +414,7 @@
 
           <p>
             This work was in part supported by NSF IIS-2112633 and the Technology Innovation Program (20018295, Meta-human: a virtual cooperation platform for specialized industrial services) funded By the Ministry of Trade, Industry & Energy(MOTIE, Korea).
-            Youngsik Yun, and Jihie Kim were supported by the MSIT (Ministry of Science, ICT), Korea, under the High-Potential Individuals Global Training Progracm (RS-2022-00155054) supervised by the IITP (Institute for Information & Communications Technology Planning & Evaluation) (50%). 
+            Youngsik Yun and Jihie Kim were supported by the MSIT (Ministry of Science and ICT), Korea, under the ITRC (Information Technology Research Center) support program (IITP-2024-2020-0-01789), and the Artificial Intelligence Convergence Innovation Human Resources Development (IITP-2024-RS-2023-00254592) supervised by the IITP (Institute for Information & Communications Technology Planning & Evaluation) (50%). 
             Andrew Hundt's contributions are based upon work supported by the National Science Foundation under Grant #2030859 to the Computing Research Association for the CIFellows Project with subaward #2021CIF-CarnegieMellon-72.
           </p>
 
